@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <%- include ("partials/html") %>
+    <!-- Web Page Description -->
+    <title>STYLISH | HOME</title>
+  </head>
+  <body>
+    <%- include ("partials/header", { shoppingCount }) %>
+    <main>
+      <h3 style="font-size: 2rem">Welcome to STYLISH!</h3>
+      <div class="main-content">
+        <img src="<%=imgUrl%>" alt="s3Image" />
+      </div>
+    </main>
+    <%- include ("partials/footer") %>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campaign Builder</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="mb-4">Campaign Builder</h1>
+
+      <div class="form-group" hidden>
+        <label for="campaignDropdown">Campaign List:</label>
+        <select class="form-control" id="campaignSelect">
+          <!-- Add more product options here -->
+        </select>
+      </div>
+      <br />
+      <!-- <form id="campaignForm" method="POST" enctype="multipart/form-data"> -->
+      <form id="campaignForm" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="title">Campaign Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="productDropdown">Select Product:</label>
+          <select
+            class="form-control"
+            id="productSelect"
+            name="product"
+            required
+          >
+            <!-- Add more product options here -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="start">Start Date:</label>
+          <input
+            type="date"
+            class="form-control"
+            id="start"
+            name="start"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="expire">Expire Date:</label>
+          <input
+            type="date"
+            class="form-control"
+            id="expire"
+            name="expire"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="image">Campaign Image:</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="image"
+            name="image"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="storyTextarea">Story:</label>
+          <textarea
+            class="form-control"
+            id="storyTextarea"
+            name="story"
+            rows="5"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Campaign</button>
+      </form>
+      <div id="campaignsList" class="mt-4">
+        <!-- Campaigns will be listed here -->
+      </div>
+    </div>
+
+    <!-- Bootstrap JS (optional, only if you need JavaScript functionality) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script defer src="/public/js/general_service.js"></script>
+    <script defer src="../public/js/campaign_service.js"></script>
+  </body>
+</html>

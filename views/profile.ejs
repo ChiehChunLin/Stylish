@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <%- include ("partials/html") %>
+    <!-- Web Page Description -->
+    <title>STYLISH | MY Profile</title>
+  </head>
+  <body>
+    <%- include ("partials/header", { shoppingCount : 0}) %>
+    <main>
+      <%- include ("partials/message", { message }) %>
+      <div class="content">
+        <h3 style="font-size: 2rem">
+          Welcome!! <u><%= user.username %></u></a>
+        </h3>
+        <div class="main-content">
+          <!-- <h4><%= user.email %></h4> -->
+          <!-- <form id="userForm"  action="/user/headshot" method="POST"  enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="user_headshot">Upload your headshot !</label>
+              <input
+                type="file"
+                class="form-control-file"
+                id="user_headshot"
+                name="user_headshot"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Upload my shot</button> -->
+          </form>
+        </div>        
+      </div>
+    </main>
+    <%- include ("partials/footer") %>
+  </body>
+</html>

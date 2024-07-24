@@ -1,0 +1,550 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+  line-height: 1.6;
+  text-align: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  text-align: inherit;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+.row {
+  max-width: 1200px;
+}
+.col {
+  padding-right: 1em;
+  padding-left: 1em;
+}
+button {
+  margin: 1rem;
+  padding: 0.6rem;
+  border: none;
+  color: skyblue;
+  font-weight: bolder;
+}
+img {
+  max-width: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
+/* ===  Hide Input Number Arrows ================
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Header Navigation ---- */
+.main-header {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1350px;
+  min-width: 370px;
+
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.head,
+.nav-ul,
+.user-ul,
+.user-li,
+.search,
+.footer_ul,
+.footer-row,
+#searchForm {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.logo img {
+  width: 200px;
+  height: 80px;
+  margin-right: 2rem;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  font-size: larger;
+  font-weight: bolder;
+  padding: 0;
+}
+.nav li {
+  padding: 1rem 0.8rem;
+}
+.nav a {
+  font-size: 1.5rem;
+  text-align: center;
+  display: block;
+  color: purple;
+}
+.nav a:hover {
+  color: orange;
+}
+.user-li img {
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+  /* padding: 1rem 0.4rem; */
+}
+.user-li a {
+  position: relative;
+  display: inline-block;
+}
+.counter {
+  position: absolute;
+  top: 22px;
+  right: 0px;
+  background-color: darkred;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+}
+.banner {
+  color: #fff;
+  background: skyblue;
+  width: 100%;
+  height: 35px;
+}
+/* ---- Main Containers ---- */
+main h3 {
+  margin: 2rem 0;
+}
+.main-content {
+  width: 80%;
+  height: 50%;
+  margin: auto;
+  font-size: 1.5rem;
+}
+.message {
+  background-color: lightyellow;
+  color: orange;
+  font-size: medium;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+.row-product {
+  width: 100%;
+  height: max-content;
+  margin: auto;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.product_window {
+  /* border: 1px solid blue; */
+  width: 250px;
+  height: 400px;
+  object-position: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 0.2rem;
+}
+.product_window:hover {
+  cursor: pointer;
+}
+.img_container{
+  /* border: 1px solid orange; */
+  height:78%;
+  width: 100%;
+  overflow: hidden;
+}
+.img_container img{  
+  width: 100%;
+}
+.item {
+  text-align: left;
+  font-size: 1.2rem;
+  /* margin: 0.1rem 0; */
+}
+.qty,
+.colors {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  margin: auto;
+}
+.color {
+  border: 1px solid darkblue;
+  width: 20px;
+  height: 20px;
+  margin: 0 0.2rem;
+}
+.pages_group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+.pages_group .selected {
+  background-color: rgb(147, 147, 147);
+}
+.page {
+  width: 30px;
+  height: min-content;
+  background-color: lightgray;
+  padding: 0.2rem;
+  margin: 0 0.3rem;
+  cursor: pointer;
+}
+/*===========Product Details ========*/
+.id {
+  color: #717171;
+  margin-bottom: 1rem;
+}
+.price {
+  margin: 0.5rem 0;
+}
+.td_name {
+  width: 20%;
+  line-height: 3rem;
+}
+.product_td,
+.col {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+}
+.imgContainer,
+.col-img {
+  /* border: 1px solid blue; */
+  height: inherit;
+  width: 50%;
+  margin-right: auto;
+}
+.product_info,
+.col-details {
+  /* border: 1px solid green; */
+  width: 40%;
+  height: inherit;
+  font-size: 1rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.product_container {
+  object-fit: fill;
+  height: inherit;
+  max-width: 100%;
+  /* border: 1px solid red; */
+}
+.product_container img{
+  width: 340px;
+  height: 510px;
+}
+.color:hover,
+.size:hover {
+  cursor: pointer;
+}
+.selected {
+  border: 3px solid rgb(98, 98, 98);
+}
+.sizes {
+  margin: auto;
+}
+.size {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  color: black;
+  background-color: lightgray;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background-clip: padding-box;
+  margin: 0 0.2rem;
+}
+.qty {
+  width: 60%;
+}
+#qty_input,
+#plus-btn,
+#minus-btn {
+  height: 2rem;
+}
+#qty_input {
+  width: 70%;
+}
+#plus-btn,
+#minus-btn {
+  width: 15%;
+  border-radius: 0.15rem;
+  background-color: darkgray;
+  display: flex;
+}
+#plus-btn:hover,
+#minus-btn:hover {
+  cursor: pointer;
+  background-color: rgb(98, 98, 98);
+}
+i {
+  margin: auto;
+}
+/* ================================= 
+  Footer
+==================================== */
+.main-footer {
+  text-align: center;
+  background: #d9e4ea;
+  margin-top: 50px;
+  padding: 0.8rem 0;
+}
+.footer-row {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.footer_li {
+  font-size: 1.2rem;
+  padding: 1rem 0.8rem;
+}
+.footer_cp a {
+  font-size: 0.8rem;
+  color: lightslategray;
+  align-self: center;
+}
+.icon {
+  width: 100%;
+  height: 40px;
+  width: 40px;
+}
+/* ================================= 
+  Form-group
+==================================== */
+.sign-group {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #212529;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1rem 0;
+}
+.sign-group label {
+  display: inline-block;
+}
+.sign-control {
+  display: block;
+  width: 80%;
+  padding: 0.375rem 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.sign-btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.sign-btn-primary:hover {
+  color: #fff;
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+/* ================================= 
+         Slideshow container
+==================================== */
+.slideshow-container {
+  width: 100%;
+  height: 40vh;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hide the images by default */
+.mySlides {
+  width: 100%;
+  height: 100%;
+}
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-position: 0% 50%;
+  object-fit: cover;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 1s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Caption text */
+.mySlides .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* ================================= 
+         Media   Queries
+==================================== */
+@media (min-width: 540px) {
+  .main-header {
+    flex-direction: column;
+  }
+  .main-nav {
+    flex-direction: row;
+  }
+  .col {
+    margin: 3rem 0;
+  }
+  .product_window {
+    height: 400px;
+  }
+}
+
+@media (min-width: 960px) {
+  .main-header,
+  .main-nav,
+  .row {
+    flex-direction: row;
+  }
+  .nav {
+    margin-right: auto;
+  }
+}
+/* @media (min-width: 1200px) {
+  .row {
+    max-width: 1200px;
+  }
+} */

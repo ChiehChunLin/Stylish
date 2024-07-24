@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <%- include ("partials/html") %>
+    <!-- Web Page Description -->
+    <title>STYLISH | MY Profile</title>
+  </head>
+  <body>
+    <%- include ("partials/header") %>
+    <main>
+        <div class="main-content">
+          <h3>Dashboard</h3>
+          <% if(revenue) { %>
+            <h3>Total Revenue: <%=revenue%></h3>
+          <% } %>     
+          <div>
+            <h3>Product sold percentage in different colors </h3>
+            <div id="myPiePlot" style="width:600px;height:250px;" display="inline-block;""></div>
+          </div>
+          <div>
+            <h3>Product sold quqntity in different price range </h3>
+            <div id="myHistogram" style="width:600px;height:250px;"></div>
+          </div>
+          <div>
+            <h3>Quantity of top 5 sold products in different sizes </h3>
+            <div id="myBarChart" style="width:600px;height:250px;"></div>
+          </div>
+          
+        </div>        
+    </main>
+    <%- include ("partials/footer") %>
+  </body>
+</html>

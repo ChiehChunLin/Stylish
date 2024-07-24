@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .card {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-8">
+          <h2>Shopping Cart</h2>
+          <div class="card">
+            <div class="card-body orderProduct">
+              <h5 class="card-title">Product Name</h5>
+              <p class="card-text">Product description and details</p>
+              <p class="card-text">Price: $XX.XX</p>
+            </div>
+          </div>
+          <!-- More products can be added here -->
+
+          <h4 class="mt-4">Order Summary</h4>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">Subtotal: $XX.XX</p>
+              <p class="card-text">Shipping Fee: $X.XX</p>
+              <h5 class="card-text">Total: $XX.XX</h5>
+            </div>
+          </div>
+          <!-- -------------------------------- -->
+          <h4 class="mt-4">Payment Information</h4>
+          <div class="card">
+            <div class="card-body">
+              <form id="payForm">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="form-group card-number-group">
+                  <label for="card-number" class="control-label"
+                    ><span id="cardtype"></span>卡號</label
+                  >
+                  <div class="form-control card-number"></div>
+                </div>
+                <div class="form-group expiration-date-group">
+                  <label for="expiration-date" class="control-label"
+                    >卡片到期日</label
+                  >
+                  <div
+                    class="form-control expiration-date"
+                    id="tappay-expiration-date"
+                  ></div>
+                </div>
+                <div class="form-group ccv-group">
+                  <label for="ccv" class="control-label">卡片後三碼</label>
+                  <div class="form-control ccv"></div>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-default"
+                  style="background-color: lightgray"
+                >
+                  Pay
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://js.tappaysdk.com/sdk/tpdirect/v5.14.0"></script>
+    <script defer src="/public/js/general_service.js"></script>
+    <script defer src="../public/js/tappay_service.js"></script>
+  </body>
+</html>

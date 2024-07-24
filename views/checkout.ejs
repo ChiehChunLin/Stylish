@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <%- include ("partials/html") %>
+    <!-- Web Page Description -->
+    <title>STYLISH | MY Profile</title>
+  </head>
+  <body>
+    <%- include ("partials/header") %>
+    <main>
+        <div class="main-content">
+          <% if (shoppingList != undefined && subtotal) { %>
+            <%- include ("partials/payment", { shoppingList , subtotal, recipient }) %>
+          <% } else { %>
+            <h3 style="font-size: 2rem">
+              There is no goods in the cart!
+            </h3>
+            <h3 style="font-size: 2rem">
+              That's go for <a href="/"><u>Shopping</u></a>
+            </h3>
+          <% } %>
+        </div>        
+    </main>
+    <%- include ("partials/footer") %>
+  </body>
+</html>

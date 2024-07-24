@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Form</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">      
+      <h2 class="form-title mb-4">Product Form</h2>
+      <form id="productForm" enctype="multipart/form-data">
+        <!-- <form id="productForm"  enctype="multipart/form-data"> -->
+        <!-- Title -->
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            required
+          />
+        </div>
+        <!-- Price -->
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input
+            type="number"
+            class="form-control"
+            id="price"
+            name="price"
+            min="1"
+            required
+          />
+        </div>
+        <!-- Category -->
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select
+            class="form-control"
+            id="category"
+            name="category"
+          />
+              <option value="men">men</option>
+              <option value="women">women</option>
+              <option value="accessories">accessories</option>
+          </select>
+        </div>
+        <!-- Description -->
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            rows="3"
+          ></textarea>
+        </div>
+        <!-- Story -->
+        <div class="form-group">
+          <label for="story">Story</label>
+          <textarea
+            class="form-control"
+            id="story"
+            name="story"
+            rows="3"
+          ></textarea>
+        </div>
+        <!-- Texture -->
+        <div class="form-group">
+          <label for="texture">Texture</label>
+          <input type="text" class="form-control" id="texture" name="texture" />
+        </div>
+        <!-- Wash -->
+        <div class="form-group">
+          <label for="wash">Wash</label>
+          <input type="text" class="form-control" id="wash" name="wash" />
+        </div>
+        <!-- Place -->
+        <div class="form-group">
+          <label for="place">Place</label>
+          <input type="text" class="form-control" id="place" name="place" />
+        </div>
+        <!-- Note -->
+        <div class="form-group">
+          <label for="note">Note</label>
+          <input type="text" class="form-control" id="note" name="note" />
+        </div>
+        <!-- Main Image -->
+        <div class="form-group">
+          <label for="mainImage">Main Image</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="mainImage"
+            name="mainImage"
+            required
+          />
+        </div>
+        <!-- Other Images -->
+        <div class="form-group">
+          <label for="otherImages">Other Images</label>
+          <input
+            type="file"
+            class="form-control-file"
+            id="otherImages"
+            name="otherImages[]"
+            multiple
+          />
+        </div>
+        <!-- Variants -->
+        <div class="form-group">
+          <label for="variants">Variants</label>
+          <div id="variants">
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="size">Size</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="size"
+                  name="sizes[]"
+                  required
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="stock">Stock</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="stock"
+                  name="stocks[]"
+                  min="1"
+                  required
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="color_code">Color Code</label>
+                <input
+                  type="color"
+                  class="form-control"
+                  id="color_code"
+                  name="color_codes[]"
+                  required
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="color_name">Color Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="color_name"
+                  name="color_names[]"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="variants">Variants</label>
+          <div id="variants">
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="size">Size</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="size"
+                  name="sizes[]"
+                  required
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="stock">Stock</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="stock"
+                  name="stocks[]"
+                  min="1"
+                  required
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="color_code">Color Code</label>
+                <input
+                  type="color"
+                  class="form-control"
+                  id="color_code"
+                  name="color_codes[]"
+                  required
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="color_name">Color Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="color_name"
+                  name="color_names[]"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="variants">Variants</label>
+          <div id="variants">
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="size">Size</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="size"
+                  name="sizes[]"
+                  required
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="stock">Stock</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="stock"
+                  name="stocks[]"
+                  min="1"
+                  required
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="color_code">Color Code</label>
+                <input
+                  type="color"
+                  class="form-control"
+                  id="color_code"
+                  name="color_codes[]"
+                  required
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="color_name">Color Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="color_name"
+                  name="color_names[]"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <!-- <button
+            type="button"
+            class="btn btn-primary mb-3"
+            onclick="addVariant()"
+            display="none"
+          >
+            Add Variant
+          </button> -->
+        </div>
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <!-- Bootstrap JS and JQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script defer src ="../public/js/general_service.js"></script>
+    <script defer src ="../public/js/product_service.js"></script>
+  </body>
+</html>

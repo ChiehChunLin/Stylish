@@ -1,0 +1,24 @@
+<!-- W3 School :https://www.w3schools.com/howto/howto_js_slideshow.asp -->
+<%if (campaigns != undefined) { %>
+<div class="slideshow-container">
+  <% campaigns.forEach((campaign, index) => { %>
+  <div class="mySlides fade">
+    <img src="<%=campaign.image %>" />
+    <div class="text"><%=campaign.title %></div>
+  </div>
+  <% }); %>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br />
+<!-- The dots/circles -->
+<div style="text-align: center">
+  <% campaigns.forEach((campaign, index) => { %>
+  <span class="dot" onclick="currentSlide(<%=index+1%>)"></span>
+  <% }); %>
+</div>
+<% } else { %>
+<div class="slideshow-container">
+  <img src="/public/images/stylish_home.png" />
+</div>
+<% } %>

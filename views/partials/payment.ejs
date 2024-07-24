@@ -1,0 +1,208 @@
+<div class="checkout">
+  <div class="shopping_cart">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Shopping Cart</h2>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="cart-items">
+                  <% if (shoppingList) { %>
+                    <% shoppingList.forEach((p) => { %>
+                      <tr>
+                        <td>
+                          <div class="product_td">
+                            <div class="imgContainer">
+                              <img src="<%=p.main_image %>" alt="p.id">
+                            </div>
+                            <div class="product_info" >
+                              <span style="font-size: 1.5rem;" value="<%=p.title %>" ><%=p.title %></span>
+                              <span style="margin-top:0.5rem; " value="<%=p.id %>" ><%=p.id %></span>
+                              <span style="margin-top: auto;" value="<%=p.color %>" >Color | <%=p.color_name %></span>
+                              <span style="margin-bottom: auto;" value="<%=p.size %>">Size  | <%=p.size %></span>
+                            </div>  
+                          </div>                                                    
+                        </td>
+                        <td class="pQty" value="<%=p.qty %>"><%=p.qty %></td>
+                        <td class="pPrice" value="<%=p.price %>">$<%=p.price %></td>
+                        <td class="pTotal" value="<%=p.total %>">$<%=p.total %></td>
+                        <td><button id="deleteCart" class="btn btn-danger delete-btn">Delete</button></td>
+                      </tr>
+                    <% }) %>  
+                  <% } %>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td style="font-weight: 500;"><h3>Total:</h3></td>
+                        <td style="font-weight: 500;" calss="subtotal" value="<%=subtotal%>"><h3>$<%=subtotal%></h3></td>
+                        <td></td>
+                      </tr>                                          
+                </tbody>
+              </table>
+            </div>
+          </div>
+  </div>
+  <br>
+  <div class="delivery_info">
+    <h4 class="mt-4">Delivery Information</h4>
+    <div class="card">
+        <div class="card-body">
+          <form id="deliveryForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputReceiveCountry">Deliver Section</label>
+                    <% if(recipient) { %>
+                      <input type="text" class="form-control" id="inputReceiveCountry" list="country" value="<%=recipient.country%>">
+                    <% } else { %>
+                      <input type="text" class="form-control" id="inputReceiveCountry" list="country" value="TW">
+                    <% } %>
+                    <datalist id="country">
+                        <option value="TW">Taiwan</option>
+                        <option value="TW_Islands">Surrounding Islands</option>
+                        <option value="HK">Hong Kong</option>
+                        <option value="SG">Singapore</option>
+                        <option value="MY">Malaysia</option>
+                    </datalist>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputReceiveTime">Deliver Time</label>
+                    <% if(recipient) { %>
+                      <input type="text" class="form-control" id="inputReceiveTime" list="deliverTime" value="<%=recipient.time%>">
+                    <% } else { %>
+                      <input type="text" class="form-control" id="inputReceiveTime" list="deliverTime" value="anytime">
+                    <% } %>
+                    <datalist id="deliverTime">
+                        <option value="morning">morning</option>
+                        <option value="afternoon">afternoon</option>
+                        <option value="anytime">anytime</option>
+                    </datalist>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputReceiveName">Receiver Name</label>
+                    <% if(recipient) { %>
+                      <input type="text" class="form-control" id="inputReceiveName" name="inputReceiveName" value="<%=recipient.name%>">
+                    <% } else { %>
+                      <input type="text" class="form-control" id="inputReceiveName" name="inputReceiveName">
+                    <% } %>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputReceivePhone">Receiver Phone</label>
+                    <% if(recipient) { %>
+                      <input type="text" class="form-control" id="inputReceivePhone" name="inputReceivePhone" value="<%=recipient.phone%>">
+                    <% } else { %>
+                      <input type="text" class="form-control" id="inputReceivePhone" name="inputReceivePhone">
+                    <% } %>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputReceiveEmail">Receiver Email</label>
+                <% if(recipient) { %>
+                  <input type="text" class="form-control" id="inputReceiveEmail" name="inputReceiveEmail" value="<%=recipient.email%>">
+                <% } else { %>
+                  <input type="text" class="form-control" id="inputReceiveEmail" name="inputReceiveEmail">
+                <% } %>
+            </div>
+            <div class="form-group">
+                <label for="address">Receiver Address:</label>
+                <% if(recipient) { %>
+                  <textarea class="form-control" id="address" name="address" required><%=recipient.address%></textarea>
+                <% } else { %>
+                  <textarea class="form-control" id="address" name="address" required></textarea>
+                <% } %>
+            </div>
+            <div class="form-check" style="display: flex;">
+                <input class="form-check-input" type="checkbox" id="checkSaveDeliverInfo" name="isSaveDeliverInfo" value="true">
+                <label class="form-check-label" for="isSaveDeliverInfo" style="font-size: 1rem;"> Save for next shop</label>
+            </div>
+        </form>        
+        </div>
+    </div>
+  </div>
+  </br>
+  <div class="payment_info">
+        <h4 class="mt-4">Payment Information</h4>
+        <div class="card">
+          <form id="payMethodForm">
+          <div class="card-body" style="display: flex; justify-content: space-around;">
+            <div class="form-check" style="display: flex;">
+              <input class="form-check-input" type="radio" name="paymentMethod" id="payCreditCard" value="credit_card" checked>
+              <label class="form-check-label" for="payCreditCard" style="font-size: 1rem;">Credit-Card</label>
+            </div>
+            <div class="form-check" style="display: flex;">
+              <input class="form-check-input" type="radio" name="paymentMethod" id="payCashDelivery" value="cash_on_delivery">
+              <label class="form-check-label" for="payCashDelivery" style="font-size: 1rem;">Cash on Delivery</label>
+            </div>
+          </div>
+          </form>
+        </div>
+        <br>
+        <div class="card" id="payFormGroup">
+          <div class="card-body ">
+            <form id="payForm">
+              <div class="form-group card-number-group">
+                <label for="card-number" class="control-label"
+                  ><span id="cardtype"></span>卡號</label
+                >
+                <div class="form-control card-number"></div>
+              </div>
+              <div class="form-group expiration-date-group">
+                <label for="expiration-date" class="control-label"
+                  >卡片到期日</label
+                >
+                <div
+                  class="form-control expiration-date"
+                  id="tappay-expiration-date"
+                ></div>
+              </div>
+              <div class="form-group ccv-group">
+                <label for="ccv" class="control-label">卡片後三碼</label>
+                <div class="form-control ccv"></div>
+              </div>
+              <div class="form-check" style="display: flex;" hidden>
+                <input class="form-check-input" type="checkbox" id="checkSavePayInfo" name="isSavePayInfo" value="true">
+                <label class="form-check-label" for="isSavePayInfo" style="font-size: 1rem;" > Save for next shop</label>
+              </div>              
+            </form>
+          </div>
+        </div>
+  </div>
+  <br>
+  <div class="card">
+    <div class="card-body">
+      <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Subtotal</h5>
+                <p id="subtotalPrice">$<%=subtotal%></p>
+            </div>
+            <div class="col-md-4">
+                <h5>Freight</h5>
+                <p id="freightPrice">$60.00</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Total</h5>
+                <p id="totalPrice">$<%=`${subtotal + 60}`%></p>
+            </div>
+        </div>
+    </div>    
+    </div>
+  </div>
+  <br>
+  <button
+    id ="checkoutOrderBtn"
+    type="click"
+    class="btn btn-default"
+    style="background-color: lightgray"
+  >
+    Checkout
+  </button>
+</div>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <%- include ("partials/html") %>
+    <!-- Web Page Description -->
+    <title>STYLISH | MY Profile</title>
+  </head>
+  <body>
+    <%- include ("partials/header") %>
+    <main>
+        <div class="main-content">
+          <% if (product) { %>
+            <div class="row-product">
+              <div class="col-img">
+                <div class="product_container">
+                  <img src="<%=product.main_image%>" alt="product">
+                </div>
+              </div>
+                <div class=" col-details">
+                  <h2 class="title"><%=product.title%></h3>
+                  <h5 class="id"><%=product.id%></h4>
+                  <h3 class="price">TWD.<%=product.price%></h3>
+                  <hr>
+                  <table>
+                    <tr>
+                        <td class="td_name">顏色</td>
+                        <td><div class="colors">
+                          <%if (product.colors) { %>
+                          <% product.colors.forEach((color) => { %>
+                            <div class="color" style="background-color:<%=`#${color.code}`%>" value="<%=color.code%>"></div>
+                          <% }) %>
+                          <% } %>
+                        </div></td>
+                    </tr>
+                    <tr>
+                      <td class="td_name">尺寸</td>
+                      <td><div class="sizes">
+                        <%if (product.sizes) { %>
+                        <% product.sizes.forEach((size) => { %>
+                          <span class="size" value="<%=size%>"><%=size%></span>
+                        <% }) %>
+                        <% } %>
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <td class="td_name">數量</td>
+                      <td>
+                        <div class="input-group mb-3 qty">
+                          <div class="input-group-prepend" id="minus-btn">
+                            <i class="fa fa-minus"></i>
+                          </div>
+                          <input type="number" id="qty_input" class="form-control form-control-sm" value="1" min="1">
+                          <div class="input-group-prepend" id="plus-btn">
+                            <i class="fa fa-plus"></i>
+                          </div>
+                      </div>
+                      </td>
+                    </tr>
+                  </table>
+                  <button class="addCart">加入購物車</button>
+                  <h5 class="warning">實品顏色依單品項為主</h4>
+                  <p><%=product.texture%></p>
+                  <p><%=product.wash%></p>
+                  <p><%=product.place%></p>
+                </div>
+            </div>
+          <% } else {%>
+            <h2>Product is preparing...</h2>
+          <% } %>
+        </div>        
+    </main>
+    <%- include ("partials/footer") %>
+  </body>
+</html>

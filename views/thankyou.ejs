@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <%- include ("partials/html") %>
+    <!-- Web Page Description -->
+    <title>STYLISH | MY Profile</title>
+  </head>
+  <body>
+    <%- include ("partials/header", { shoppingCount: 0 }) %>
+    <main>
+      <%- include ("partials/message", { message }) %>
+      <div class="content">
+        <h3 style="font-size: 2rem">
+          Enjoy Your Shop!</a>
+        </h3>
+        <div class="main-content">
+          <div class="row">
+            <img src="/public/images/thank_you.png" alt="thank_you">
+          </div>
+        </div>        
+      </div>
+    </main>
+    <%- include ("partials/footer") %>
+  </body>
+</html>

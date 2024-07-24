@@ -1,0 +1,9 @@
+/node_modules
+/public/images
+/uploads
+/public/images
+/temp
+/key
+/script
+.env
+*.log

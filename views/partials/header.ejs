@@ -1,0 +1,35 @@
+<header class="main-header">
+    <div class="head logo">
+      <a href="/">
+        <img src="/public/icons/stylish_logo.png" alt="Logo" />
+      </a>
+    </div>
+    <div class="head nav">
+      <ul class="nav-ul">
+        <li class="nav-li menu_men"><a href="/api/1.0/products/men">MEN</a></li>        
+        <li class="nav-li menu_women"><a href="/api/1.0/products/women">WOMEN</a></li>
+        <li class="nav-li menu_accessories"><a href="/api/1.0/products/accessories">ACCESSORIES</a></li>
+      </ul>
+    </div>
+    <div class="head user">
+      <ul class="user-ul">
+        <li class="user-li ">
+          <div class="search searchGroup">
+            <div class="search">
+              <input class="form-control"
+              type="text" 
+              id="inputSearch"
+              placeholder="Search"
+              name="search"
+              style="width:200px;"
+              >            
+            </div>
+            <img src="/public/icons/search.png" alt="search">
+          </div>          
+        </li>
+        <li class="user-li order"><a href="/api/1.0/order/checkout"><img src="/public/icons/cart.png" alt="cart"><div class="counter"><%=shoppingCount%></div></a></li>
+        <li class="user-li profile"><a href="/api/1.0/user/signin"><img src="/public/icons/member.png" alt="user"></a></li>
+      </ul>
+    </div>
+</header>
+<div class="banner"></div>

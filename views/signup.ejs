@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <%- include ("partials/html") %>
+        <!-- Web Page Description -->
+        <title>STYLISH | SignUp</title>
+  </head>
+  <body>
+    <%- include ("partials/header", { shoppingCount: 0 }) %>
+    <main>      
+      <%- include ("partials/message", { message }) %>
+      <div class="main-content">   
+            <h3 style="font-size: 2rem;">Signup Here or <a href="/api/1.0/user/signin"><u>Login</u></a></h3>
+            <br />
+            <div id="status"></div>
+            <div class="col-md-12">
+            <button
+              id="facebookSignin"
+              type="click"
+              class="btn"
+              style="
+                padding: 0.2rem 0.5rem;
+                background-color: rgb(7, 7, 7);
+                color: rgb(255, 255, 255);
+                display: flex;
+                align-items: center;
+                width: max-content;
+                margin: auto;                
+              "              
+            >
+              <img
+                src="/public/icons/3225194_facebook_icon.png"
+                style="width: 25px; height: 25px; margin-right: 0.5rem"
+              />
+              Signup with Facebook
+            </button>
+            </div>
+            <br />
+            <form id="signupForm" action="/api/1.0/user/signup" method="POST">
+              <div class="sign-group">
+                <label for="inputName">Username：</label>
+                <input
+                  class="sign-control"
+                  type="text"
+                  id="myname"
+                  placeholder="please enter username"
+                  name="name"
+                  required
+                />
+              </div>
+              <br />
+              <div class="sign-group">
+                <label for="inputEmail">Email address：</label>
+                <input
+                  class="sign-control"
+                  type="email"
+                  id="inputEmail"
+                  placeholder="your email"
+                  name="email"
+                  required
+                />
+              </div>
+              <br />
+              <div class="sign-group">
+                <label for="inputPassword">Password：</label>
+                <input
+                  class="sign-control"
+                  type="password"
+                  id="inputPassword"
+                  placeholder="Must Contain LowerCase and Numbers"
+                  name="password"
+                  required
+                />
+                <div class="showPwBox">
+                  <input id="showPw" type="checkbox" onclick="myFunction()" />                
+                  <label for="showPw" style="font-size: 1rem;">Show Password</label>
+                </div>                
+                <script>
+                  function myFunction() {
+                    var pw = document.getElementById("inputPassword");
+                    if (pw.type == "password") {
+                        pw.type = "text";
+                    } else {
+                        pw.type = "password";
+                    }
+                  }
+                </script>
+              </div>
+              <br />
+              <button type="submit" class="sign-btn sign-btn-primary">Submit</button>
+            </form>
+    </main>
+    <%- include ("partials/footer") %>
+  </body>
+</html>
