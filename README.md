@@ -1,6 +1,7 @@
 # STYLiSH
 ## Introduction
 STYLiSH is a practice E-commerce website. It was my first experience building a complete project without predefined steps. Starting from scratch, I designed the user flow, data flow, and program structure. 
+<br>
 The key items are listed below:
 
 ## Programming Language
