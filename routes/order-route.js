@@ -5,7 +5,7 @@ dotenv.config();
 
 const { authJwtCheckLogin } = require("../middleware/authenticate");
 const { cacheUserAndShoppingRecord } = require("../middleware/checkCache");
-const { setRedis, getRedis, deleteRedis } = require("../db/redis-cache");
+const { setRedis, getRedis, deleteRedis } = require("../database/redis-cache");
 const {
   newOrder,
   getOrder,
@@ -18,8 +18,8 @@ const {
   setRecipientInfo,
   getRecipientInfo,
   setPayInfo,
-} = require("../db/order-model");
-const { getUserRecipient, getUserPayInfo } = require("../db/user-model");
+} = require("../database/order-model");
+const { getUserRecipient, getUserPayInfo } = require("../database/user-model");
 
 const shipping = {
   UNPAID: "unpaid", //unpaid

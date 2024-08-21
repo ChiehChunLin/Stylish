@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const midDB =require("../db/midterm-model");
+const midDB =require("../database/midterm-model");
 const api = "http://35.75.145.100:1234/api/1.0/order/data";
 
 
@@ -36,10 +36,11 @@ router.get("/piePlot", async (req,res)=> {
     const labels=[];
     const color_codes=[];
     for(let i=0 ; i<distinctColor.length;i++){
+      const distinct = distinctColor[i].product_color.replace('#','');
         const colorData = await midDB.getColorCount(user.id, distinctColor[i].product_color);
         values.push(Math.round(colorData.qty/soldQuantity*100));
         labels.push(colorData.color.name);
-        color_codes.push(colorData.color.code);
+        color_codes.push(`#${colorData.color.code}`);
     }
     res.status(200).send({ values, labels, color_codes });
 } catch (err) {

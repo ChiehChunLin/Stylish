@@ -6,7 +6,7 @@ const {
   getProductById,
   getWindowDataByCategory,
   getWindowDataBySearch,
-} = require("../db/product-model");
+} = require("../database/product-model");
 const { authJwtCheckNext } = require("../middleware/authenticate");
 const {
   cacheCampaign,

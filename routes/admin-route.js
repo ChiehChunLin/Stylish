@@ -21,10 +21,10 @@ const upload = multer({
     fileSize: maxSize,
   },
 });
-const { newProduct } = require("../db/product-model");
-const { getProductTitleList, newCampaign } = require("../db/marketing-model");
+const { newProduct } = require("../database/product-model");
+const { getProductTitleList, newCampaign } = require("../database/marketing-model");
 const { getImageCDN, getImageS3, putImageS3 } = require("../controller/s3");
-const { getTimeID, getCryptoID } = require("../db/initDataId");
+const { getTimeID, getCryptoID } = require("../database/initDataId");
 
 const expire_date = moment().add(10, "days").format("YYYY-MM-DD");
 const cdnURL = process.env.AWS_CDN_URL;

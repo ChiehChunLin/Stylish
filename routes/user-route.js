@@ -5,8 +5,8 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const dotenv = require("dotenv");
 dotenv.config();
-const { getShoppingCount } = require("../db/order-model");
-const { newUser, getUserByEmail } = require("../db/user-model");
+const { getShoppingCount } = require("../database/order-model");
+const { newUser, getUserByEmail } = require("../database/user-model");
 const { authJwtSign, authJwtCheckNext } = require("../middleware/authenticate");
 const { removeUserAndShoppingRecord } = require("../middleware/checkCache");
 const authProvider = {

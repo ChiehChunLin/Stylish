@@ -7,3 +7,5 @@
 /script
 .env
 *.log
+stylish_rds.sql
+.env_EC2

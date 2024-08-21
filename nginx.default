@@ -42,8 +42,8 @@ server {
 
 	# Add index.php to the list if you are using PHP
 	index index.html index.htm index.nginx-debian.html;
-	ssl_certificate /home/chiehchunlin/wk/localhostkey/cert.pem;
-	ssl_certificate_key /home/chiehchunlin/wk/localhostkey/key.pem;
+	ssl_certificate /home/ubuntu/doaminKey/certificate.crt;
+	ssl_certificate_key /home/ubuntu/doaminKey/private.key;
 	ssl_protocols	TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
 	ssl_ciphers	HIGH:!aNULL:!MD5;
 	ssl_session_timeout	15m;

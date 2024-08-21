@@ -9,8 +9,8 @@ const marketRoute = require("./routes/marketing-route");
 const productsRoute = require("./routes/products-route");
 const orderRoute = require("./routes/order-route");
 const midtermRoute = require("./routes/midterm-route");
-const { getPayData } = require("./db/order-model");
-const { rpushRedis } = require("./db/redis-cache");
+const { getPayData } = require("./database/order-model");
+const { rpushRedis } = require("./database/redis-cache");
 const {
   authJwtCheckNext,
   authJwtCheckLogin,

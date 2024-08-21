@@ -5,7 +5,7 @@ const {
   getProductTitleList,
   getCampaignTitleList,
   getHotsData,
-} = require("../db/marketing-model");
+} = require("../database/marketing-model");
 const { cacheCampaign } = require("../middleware/checkCache");
 
 //======================================
