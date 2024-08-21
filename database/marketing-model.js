@@ -1,7 +1,7 @@
 const mysql = require("mysql2");
 const dotenv = require("dotenv");
 dotenv.config();
-const { getImageCDN } = require("../controller/s3");
+const { getImageCDN } = require("../controllers/s3");
 
 const pool = mysql
   .createPool({
