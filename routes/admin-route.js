@@ -23,7 +23,7 @@ const upload = multer({
 });
 const { newProduct } = require("../database/product-model");
 const { getProductTitleList, newCampaign } = require("../database/marketing-model");
-const { getImageCDN, getImageS3, putImageS3 } = require("../controller/s3");
+const { getImageCDN, getImageS3, putImageS3 } = require("../controllers/s3");
 const { getTimeID, getCryptoID } = require("../database/initDataId");
 
 const expire_date = moment().add(10, "days").format("YYYY-MM-DD");

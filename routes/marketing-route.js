@@ -6,7 +6,7 @@ const {
   getCampaignTitleList,
   getHotsData,
 } = require("../database/marketing-model");
-const { cacheCampaign } = require("../middleware/checkCache");
+const { cacheCampaign } = require("../middlewares/checkCache");
 
 //======================================
 router.get("/campaigns", async (req, res) => {

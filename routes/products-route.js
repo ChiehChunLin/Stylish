@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { getImageCDN } = require("../controller/s3");
+const { getImageCDN } = require("../controllers/s3");
 const {
   getProductRowsCountCategory,
   getProductRowsCountSearch,
@@ -7,11 +7,11 @@ const {
   getWindowDataByCategory,
   getWindowDataBySearch,
 } = require("../database/product-model");
-const { authJwtCheckNext } = require("../middleware/authenticate");
+const { authJwtCheckNext } = require("../middlewares/authenticate");
 const {
   cacheCampaign,
   cacheUserAndShoppingRecord,
-} = require("../middleware/checkCache");
+} = require("../middlewares/checkCache");
 const productCategory = {
   MEN: "Men",
   WOMEN: "Women",

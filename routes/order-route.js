@@ -3,8 +3,8 @@ const mysql = require("mysql2");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const { authJwtCheckLogin } = require("../middleware/authenticate");
-const { cacheUserAndShoppingRecord } = require("../middleware/checkCache");
+const { authJwtCheckLogin } = require("../middlewares/authenticate");
+const { cacheUserAndShoppingRecord } = require("../middlewares/checkCache");
 const { setRedis, getRedis, deleteRedis } = require("../database/redis-cache");
 const {
   newOrder,

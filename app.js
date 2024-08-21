@@ -15,12 +15,12 @@ const {
   authJwtCheckNext,
   authJwtCheckLogin,
   authAdminCheck,
-} = require("./middleware/authenticate");
+} = require("./middlewares/authenticate");
 const {
   cacheCampaign,
   cacheUserAndShoppingRecord,
-} = require("./middleware/checkCache");
-const { rateProtector } = require("./middleware/rateLimiter");
+} = require("./middlewares/checkCache");
+const { rateProtector } = require("./middlewares/rateLimiter");
 
 const cors = require("cors");
 const { createLogger, format, transports } = require("winston");

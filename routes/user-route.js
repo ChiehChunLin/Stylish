@@ -7,8 +7,8 @@ const dotenv = require("dotenv");
 dotenv.config();
 const { getShoppingCount } = require("../database/order-model");
 const { newUser, getUserByEmail } = require("../database/user-model");
-const { authJwtSign, authJwtCheckNext } = require("../middleware/authenticate");
-const { removeUserAndShoppingRecord } = require("../middleware/checkCache");
+const { authJwtSign, authJwtCheckNext } = require("../middlewares/authenticate");
+const { removeUserAndShoppingRecord } = require("../middlewares/checkCache");
 const authProvider = {
   NATIVE: "native",
   FACEBOOK: "facebook",
