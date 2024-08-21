@@ -4,10 +4,10 @@ const {
   getRedis,
   deleteRedis,
   deleteAllRedis,
-} = require("../db/redis-cache");
-const { getAllCampaigns } = require("../db/marketing-model");
-const { getUser } = require("../db/user-model");
-const { getShoppingList } = require("../db/order-model");
+} = require("../database/redis-cache");
+const { getAllCampaigns } = require("../database/marketing-model");
+const { getUser } = require("../database/user-model");
+const { getShoppingList } = require("../database/order-model");
 
 const campaignKey = "campaign";
 const userKey = "userInfo";
